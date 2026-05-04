@@ -12,8 +12,9 @@ phases:
       - pip install --quiet semgrep
 
       # Install Gitleaks (secret scanning)
-      - curl -sSL https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64.tar.gz \
-        | tar -xz
+      - echo "Downloading Gitleaks..."
+      - curl -sSL -o gitleaks.tar.gz https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64.tar.gz
+      - tar -xzf gitleaks.tar.gz
 
   pre_build:
     commands:
